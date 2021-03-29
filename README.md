@@ -17,11 +17,11 @@ Define a continous trait
 Define a binary trait     
 [Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
 Family-based GWAS     
-PheWAS
+PheWAS     
 Construct a PRS    
 PRS PheWAS     
 One-sample MR     
 Non-linear MR     
 Summary-level MR     
-Within-family MR
-MR PheWAS
+Within-family MR     
+MR PheWAS       
