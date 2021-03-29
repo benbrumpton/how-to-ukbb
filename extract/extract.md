@@ -35,3 +35,5 @@ where `ch_rsid.txt` contains the chromosome and rsid:
 13 rs74737349      
 
 Please note: the outputformat can be `bgen`, `vcf` or `dose`.
+
+[BACK-TO-HOME-PAGE](https://github.com/benbrumpton/how-to-ukbb)
