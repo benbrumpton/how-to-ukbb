@@ -16,7 +16,9 @@ Summary-level data can be tranfered as per our ethics application and UKBB appro
 Define a continous trait     
 Define a binary trait     
 [Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
+Family-based GWAS     
 Construct a PRS     
 One-sample MR     
 Non-linear MR     
 Summary-level MR     
+Within-family MR
