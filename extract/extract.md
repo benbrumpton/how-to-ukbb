@@ -15,9 +15,9 @@ https://biobank.ndph.ox.ac.uk/ukb/search.cgi
 Once you have a list of fields you can extract them using the below command:    
 username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_phe$ `bash extract_phe.sh ~/projects/hla/hla_fields.txt`
 
-where `hla_fields.txt` contains the list of fields:
-Field_ID
-22182
+where `hla_fields.txt` contains the list of fields:    
+Field_ID     
+22182    
 
 Pleas note: ~/projects/hla/hla_fields.txt is just an example
 
