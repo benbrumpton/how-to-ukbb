@@ -12,13 +12,12 @@ Do not transfer individual-level data off the lab
 Summary-level data can be tranfered as per our ethics application and UKBB approval   
 
 ## How to   
-Extract a phenotype file    
-Extract a genotype file    
-Define a continous trait    
-Define a binary trait    
-Run a GWAS
-  - [Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas) 
-Construct a PRS    
-One-sample MR    
-Non-linear MR    
-Summary-level MR    
+Extract a phenotype file     
+Extract a genotype file     
+Define a continous trait     
+Define a binary trait     
+[Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
+Construct a PRS     
+One-sample MR     
+Non-linear MR     
+Summary-level MR     
