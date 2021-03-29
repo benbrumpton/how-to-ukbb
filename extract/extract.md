@@ -27,7 +27,7 @@ Variants can be found using the UKB data showcase:
 https://biobank.ctsu.ox.ac.uk/crystal/gsearch.cgi
   
 Once you have a list of variants you can extract them using the below command:     
-username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_phe$ `extract_snp.sh input.txt outputformat`
+username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_phe$ `bash extract_snp.sh ch_rsid.txt outputformat`
 
 where `input.txt` contains the chromosome and rsid:     
 2 rs142760803       
