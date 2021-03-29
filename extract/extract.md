@@ -29,7 +29,9 @@ https://biobank.ctsu.ox.ac.uk/crystal/gsearch.cgi
 Once you have a list of variants you can extract them using the below command:     
 username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_phe$ `bash extract_snp.sh ch_rsid.txt outputformat`
 
-where `input.txt` contains the chromosome and rsid:     
+where `ch_rsid.txt` contains the chromosome and rsid:     
 2 rs142760803       
 4 rs1917332       
 13 rs74737349      
+
+where `outputformat` can be `bgen`, `vcf` or `dose`.
