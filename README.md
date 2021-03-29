@@ -3,7 +3,7 @@
 ## Lab overview   
 `/mnt/yourusername/home` - space for your private files   
 `/mnt/work/` - formated files used for analysis    
-`/mnt/scratch/` - space for temporary working files    
+`/mnt/scratch/` - space for your temporary working files    
 `/mnt/cargo/` - a directory to mount from your local drive for transfering results in and out    
 `/mnt/archive/` - space for original files from UKBB
 
