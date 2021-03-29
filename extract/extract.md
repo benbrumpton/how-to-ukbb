@@ -34,4 +34,4 @@ where `ch_rsid.txt` contains the chromosome and rsid:
 4 rs1917332       
 13 rs74737349      
 
-Please note: the `outputformat` can be `bgen`, `vcf` or `dose`.
+Please note: the outputformat can be `bgen`, `vcf` or `dose`.
