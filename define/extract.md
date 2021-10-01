@@ -1,13 +1,28 @@
-# ukb_extract
+# ukb_define_ICD_phenotype
 
 # Warning!
 Do not transfer individual-level data off the lab    
 Summary-level data can be tranfered as per our ethics application and UKBB approval   
 
 ## Description
-These scripts are to subset the main phenotype and genotype files    
+These scripts are to define a phenotype based on ICD codes    
 
-## extract_phe
+## Dependencies
+To define a phenotype based on ICD codes you need to already have a file with the ICD codes.   
+If you need to extract this, please follow these intructions:    
+[Extract a phenotype or genotype file](https://github.com/benbrumpton/how-to-ukbb/blob/main/extract/extract.md)    
+
+## Step 1
+Copy this script to your project directory.   
+For example:
+username@hunt-ukbb-home:~/scratch/repo/how-to-ukbb/define$ `cp define_ICD_phenotype.R ~/mnt/scratch/examples/`
+
+## Step 2
+Replace the ICD codes with those that match your phenotype.  
+For example,
+Replace B27 with 
+
+
 Extract phenotypes. Phenotypes are any variable contained in a field.    
 Fields can be found using the UKB data showcase:     
 https://biobank.ndph.ox.ac.uk/ukb/search.cgi     
