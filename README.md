@@ -3,7 +3,7 @@
 ## Lab overview   
 `/mnt/yourusername/home` - space for your private files   
 `/mnt/work/` - formated files used for analysis    
-`/mnt/scratch/` - space for temporary working files    
+`/mnt/scratch/` - space for your temporary working files    
 `/mnt/cargo/` - a directory to mount from your local drive for transfering results in and out    
 `/mnt/archive/` - space for original files from UKBB
 
@@ -12,12 +12,16 @@ Do not transfer individual-level data off the lab
 Summary-level data can be tranfered as per our ethics application and UKBB approval   
 
 ## How to   
-Extract a phenotype file     
-Extract a genotype file     
+[Extract a phenotype or genotype file](https://github.com/benbrumpton/how-to-ukbb/blob/main/extract/extract.md)         
 Define a continous trait     
 Define a binary trait     
 [Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
-Construct a PRS     
+Family-based GWAS     
+PheWAS     
+Construct a PRS    
+PRS PheWAS     
 One-sample MR     
 Non-linear MR     
 Summary-level MR     
+Within-family MR     
+MR PheWAS       
