@@ -20,11 +20,9 @@ username@hunt-ukbb-home:~/scratch/repo/how-to-ukbb/define$ `cp define_ICD_phenot
 ## Step 2
 Open the script in a text editor and edit the input and output.     
 
-Replace the input file (below) with your custom file name and directory:      
-`dt <- fread("/mnt/scratch/examples/ukb_phenotype_2021-09-23.txt.gz")`
-
-Replace the output file (below) your custom output file name and directory:      
-`write.table(out,"/mnt/scratch/examples/MN_ICD10_2021-09-23_phenoConstruct.txt",sep="\t",quote=F,col.names=T,row.names=F)`
+Replace the input and output files (below) with your custom file name and directory you want:      
+`input_file_name <- "/mnt/scratch/examples/ukb_phenotype_2021-09-23.txt.gz"`    
+`output_file_name <- "/mnt/scratch/examples/MN_ICD10_2021-09-23_phenoConstruct.txt"`     
 
 ## Step 3
 Replace the ICD code(s) with those that match your phenotype.  
