@@ -24,7 +24,7 @@ Replace the input file (below) with your custom file name and directory:
 `dt <- fread("/mnt/scratch/examples/ukb_phenotype_2021-09-23.txt.gz")`
 
 Replace the output file (below) your custom output file name and directory:      
-`write.table(out,"/mnt/scratch/examples/MN_ICD10_2021-09-23_phenoConstruct_v2.txt",sep="\t",quote=F,col.names=T,row.names=F)`
+`write.table(out,"/mnt/scratch/examples/MN_ICD10_2021-09-23_phenoConstruct.txt",sep="\t",quote=F,col.names=T,row.names=F)`
 
 ## Step 3
 Replace the ICD code(s) with those that match your phenotype.  
