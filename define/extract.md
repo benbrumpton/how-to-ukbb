@@ -30,8 +30,8 @@ Replace the output file (below) your custom output file name and directory:
 Replace the ICD code(s) with those that match your phenotype.  
 For example,     
 Replace B27 with J45 if you are interested in asthma.    
-`idx10 <- which(icd_long$ICD10=="B27")` # Exact match
-`idx10category <- which(icd_long$ICD10category=="B27")` # Match Category
+`idx10 <- which(icd_long$ICD10=="B27")` #Exact match    
+`idx10category <- which(icd_long$ICD10category=="B27")` #Match Category     
 
 ## Step 5
 Run the script.   
