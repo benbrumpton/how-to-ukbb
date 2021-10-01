@@ -13,42 +13,30 @@ If you need to extract this, please follow these intructions:
 [Extract a phenotype or genotype file](https://github.com/benbrumpton/how-to-ukbb/blob/main/extract/extract.md)    
 
 ## Step 1
-Copy this script to your project directory.   
+Copy this script to your project directory.
 For example:
 username@hunt-ukbb-home:~/scratch/repo/how-to-ukbb/define$ `cp define_ICD_phenotype.R ~/mnt/scratch/examples/`
 
 ## Step 2
-Replace the ICD codes with those that match your phenotype.  
+Open the script in a text editor and edit the input and output
+
+Replace the input file (below) with your custom file name and directory:
+`dt <- fread("/mnt/scratch/examples/ukb_phenotype_2021-09-23.txt.gz")`
+
+Replace the output file (below) your custom output file name and directory:
+`write.table(out,"/mnt/scratch/examples/MN_ICD10_2021-09-23_phenoConstruct_v2.txt",sep="\t",quote=F,col.names=T,row.names=F)`
+
+## Step 3
+Replace the ICD code(s) with those that match your phenotype.  
 For example,
-Replace B27 with 
+Replace B27 with J45 if you are interested in asthma
+`idx10 <- which(icd_long$ICD10=="B27")` # Exact match
+`idx10category <- which(icd_long$ICD10category=="B27")` # Match Category
 
-
-Extract phenotypes. Phenotypes are any variable contained in a field.    
-Fields can be found using the UKB data showcase:     
-https://biobank.ndph.ox.ac.uk/ukb/search.cgi     
-
-Once you have a list of fields you can extract them using the below command:    
-username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_phe$ `bash extract_phe.sh ~/projects/hla/hla_fields.txt`
-
-where `hla_fields.txt` contains the list of fields:    
-Field_ID     
-22182    
-
-Pleas note: ~/projects/hla/hla_fields.txt is just an example
-
-## extract_snp
-Most of the genotypes in biobank are found in the bulk downloads. The most common genotypes of interest are SNPs.    
-Variants can be found using the UKB data showcase:     
-https://biobank.ctsu.ox.ac.uk/crystal/gsearch.cgi
-  
-Once you have a list of variants you can extract them using the below command:     
-username@hunt-ukbb-home:~/scratch/repo/ukb_extract/extract_snp$ `bash extract_snp.sh ch_rsid.txt dose`
-
-where `ch_rsid.txt` contains the chromosome and rsid:     
-2 rs142760803       
-4 rs1917332       
-13 rs74737349      
-
-Please note: the outputformat can be `bgen`, `vcf` or `dose`.
+## Step 5
+Run the script.   
+`Rscript define_ICD_phenotype.R`
+Wait 5-10 mins.   
+Then collect your file from output file directory
 
 [BACK-TO-HOME-PAGE](https://github.com/benbrumpton/how-to-ukbb)
