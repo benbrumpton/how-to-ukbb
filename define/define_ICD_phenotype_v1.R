@@ -3,28 +3,14 @@
 library(data.table)
 
 #Read variable file (already filtered on the most recent gid_current)
-dt <- fread("/mnt/scratch/examples/ukb_phenotype_2021-09-23.txt.gz")
+dt <- fread("ukb_phenotype_2021-09-23.txt.gz")
 
-#Find ICD code feilds 
+#ICD code for mononucleosis
+icd10 <- "B27"
 icd_cols <- grep('f.41270',names(dt),value=TRUE)
 
-#Reshape wide to long
-icd_long <- melt(setDT(dt), id.vars = 1, measured.vars = icd_cols, variable.name = "feild", value.name="icd_10")
-
-# Cleanup ICD10 codes; i.e. add dot and remove suffixes
-icd_long[,ICD10category:=gsub("([A-Z][0-9]{2}).+","\\1",icd_long$icd_10)]
-icd_long[,ICD10suffix:=gsub("[A-Z].+","",gsub("^[A-Z][0-9]{2}","",icd_long$icd_10))]
-icd_long[,ICD10:=paste0(ICD10category,ifelse(ICD10suffix == "","","."),icd_long$ICD10suffix)]
-
-#ICD codes for mononuclesis
-#Find ids with matching ICD code for your phenotype
-idx10 <- which(icd_long$ICD10=="B27") # Exact match
-idx10category <- which(icd_long$ICD10category=="B27") # Match category
-idx = sort(union(idx10, idx10category))
-cases <- unique(icd_long$f.eid[idx])
-
-#Add column for those IDs to the main dataset
-dt$MN_ICD10 <- ifelse(dt$f.eid %in% cases, 1, 0)
+#Go through ICD instance columns and identify those who had any B27 diagnose at any time
+dt$MN_ICD10 <- apply(dt[,..icd_cols], MARGIN=1, FUN = function(x) {ifelse(any(grepl(icd10,x)==T),1,0)})
 
 #Name and create base variables
 setnames(dt,"f.eid","FID")
