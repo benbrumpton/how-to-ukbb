@@ -1,6 +1,6 @@
 # UKBpheWAS
 
-Perform phenome-wide association study (PheWAS) in UK Biobank
+Perform phenome-wide association study (PheWAS) in UK Biobank on the `hunt-ukbb` lab.
 
 ### Step 1. Download
 
