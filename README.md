@@ -18,7 +18,7 @@ Define a binary trait
 [Define a ICD-based phenotype](define/define.md)  
 [Run a GWAS](launch-ukbb-gwas/README.md)  
 Family-based GWAS     
-[PheWAS](UKBphewas/README.md)   
+[PheWAS](UKBpheWAS/README.md)   
 Construct a PRS    
 PRS PheWAS     
 One-sample MR     
