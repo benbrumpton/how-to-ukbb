@@ -15,7 +15,7 @@ Summary-level data can be tranfered as per our ethics application and UKBB appro
 [Extract a phenotype or genotype file](https://github.com/benbrumpton/how-to-ukbb/blob/main/extract/extract.md)         
 Define a continous trait     
 Define a binary trait    
-[Define a ICD-based phenotype](https://github.com/hunt-genes/how-to-ukbb/tree/main/define) 
+[Define a ICD-based phenotype](https://github.com/hunt-genes/how-to-ukbb/tree/main/define)  
 [Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
 Family-based GWAS     
 [PheWAS](https://github.com/hunt-genes/how-to-ukbb/tree/main/UKBpheWAS)   
