@@ -1,0 +1,9 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root      1238  0.0  0.0  14652  1572 tty1     Ss+  Sep28   0:00 /sbin/agetty --noclear tty1 linux
+root      1240  0.0  0.0  14468  1820 ttyS0    Ss+  Sep28   0:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyS0 vt220
+ailinfh  21217  0.0  0.1  21296  4996 pts/0    Ss+  09:47   0:00 -bash
+ailinfh  21277  0.0  0.1  21312  5292 pts/1    Ss+  09:49   0:00 -bash
+benb     21555  0.0  0.1  21388  5332 pts/2    Ss   10:13   0:00 -bash
+benb     21732  0.0  0.0  11244  2920 pts/2    S+   10:25   0:00 bash cpumem.sh
+benb     21733  0.0  0.0  36052  3256 pts/2    R+   10:25   0:00 ps ua
+NO_ONE ssh ubuntu@hunt-ukbb-iaas-theem bash
