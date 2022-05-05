@@ -11,15 +11,16 @@ The best resource for comprehensive UK Biobank summary statistics as of May, 202
 Bash script takes arguments in this order
 1) the name of the latest Pan UKBB manifest in a tab separated variable (.tsv) file.  (i.e. Pan-UK_Biobank_phecode_manifest.tsv)
 2) Trait type (biomarkers, continuous, categorical, icd10, phecode, prescriptions) from 1st column of manifest file
-3) path to file where you want this download made 
+3) Path to the output directory where you want the download made. 
 
-* Script creates `wget` command for all the results that you want
+* Script creates `wget` command for all the results that you want. Do understand this utility, `wget -help`
+
 For example:
 `wget -O /home/bwolford/scratch/panukb/continuous-100001-both_sexes-irnt.tsv.bgz https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files/continuous-100001-both_sexes-irnt.tsv.bgz`
 
 * We want to use `nohup` so the downloads won't get interrupted
 
-`nohup bash download.sh <file> <trait_type> <output/dir/output.file> &`
+`nohup bash download.sh <file> <trait_type> <output/dir/> &`
 
 For example:
 `bash how-to-ukbb/UKBpheWAS/download.sh Pan-UKBiobank_phenotype_manifest.tsv continuous /home/bwolford/scratch/panukbb`
