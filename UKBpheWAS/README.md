@@ -25,6 +25,8 @@ For example:
 For example:
 `nohup bash how-to-ukbb/UKBpheWAS/download.sh Pan-UKBiobank_phenotype_manifest.tsv continuous /home/bwolford/scratch/panukbb &`
 
+You may want to run this command for multiple trait categories (e.g. phecode, biomakers)
+
 * If you wanted to do this one by one and download into the current working directory, the command would look something like
 
 `wget https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files/phecode-008-both_sexes.tsv.bgz`
