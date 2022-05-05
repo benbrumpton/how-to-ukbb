@@ -1,16 +1,22 @@
-# Download the summary stats
+#!/bin/bash
 
-# Check for the lastest manifest
-#i.e. Pan-UK_Biobank_phecode_manifest.tsv
+#input .tsv version of PanUKB manifest
+#assumes the first column is the trait type (biomarkers, continuous, categorical, icd10, phecode, prescriptions)
+#assumes columns 77 and 78 (1-based counting) have the AWS link for donwloading the summary statistics and .tbi file, respectively
+file=$1
+trait_type=$2
+output=$3
 
-# Create wget for all the results that you want
-# i.e. 
+#some of the columns in the manifest are empty so the tab delimited version will have different line numbers when processed. Let's turn the tabs into semi colons, and then use that to split each line into an array
+sed 's/\t/;/g' $file > download.tmp
+while IFS=";" read -r -a tmp ; do
+    if [ "${tmp[0]}" == ${trait_type} ]; then
+	echo "${tmp[76]}" #actual summary stats file
+	wget "${tmp[76]}"
+	echo "${tmp[77]}" #.tbi
+	wget "${tmp[76]}"
+    fi
+done < download.tmp
+rm download.tmp #clean up by removing this file 
 
-#benb@hunt-phecodes-home:~/work/results/pan-ukbb-v02/phecodes$ head wget_tsv_bgz.sh
-#wget https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files/phecode-008-both_sexes.tsv.bgz
-#wget https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files/phecode-008.5-both_sexes.tsv.bgz
 
-# Also download the tabix index
-#benb@hunt-phecodes-home:~/work/results/pan-ukbb-v02/phecodes$ head wget_tsv_bgz_tbi.sh
-#wget https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files_tabix/phecode-008-both_sexes.tsv.bgz.tbi
- 
