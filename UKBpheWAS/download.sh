@@ -11,8 +11,8 @@ output=$3 #needs to be an output file
 #it seems the end of the line, which is the tabix index URL, has a character leftover from copy and paste on a non unix environment (%0D), so we need to use dos2unix 
 dos2unix $file
 
-#some of the columns in the manifest are empty so the tab delimited version will have differen line numbers when processed. Let's turn the tabs into semi colons with sed, and then use that to split each line into an array
-sed 's/\t/;/g' $file > download.tmp
+#some of the columns in the manifest are empty so the tab delimited version will have differen line numbers when processed. Let's turn the tabs into semi colons with sed, and then use that to split each line into an array. We will write a temporary file that gets deleted. It matches the trait_type so you can run multiple at once.
+sed 's/\t/;/g' $file > ${trait_type}.download.tmp
 while IFS=";" read -r -a tmp ; do
     if [ "${tmp[0]}" == ${trait_type} ]; then #if it is the trait type we want
 	if [ -e "${output}/${tmp[74]}" ]; then #see if summary stats file exists locally 
@@ -29,7 +29,7 @@ while IFS=";" read -r -a tmp ; do
 	   wget -O ${output}/${tmp[75]} "${tmp[77]}"
 	fi
     fi
-done < download.tmp
-rm download.tmp #clean up by removing this file 
+done < ${trait_type}.download.tmp
+rm ${trait_type}.download.tmp #clean up by removing this file 
 
 
