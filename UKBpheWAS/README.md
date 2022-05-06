@@ -25,7 +25,7 @@ For example:
 For example:
 `nohup bash how-to-ukbb/UKBpheWAS/download.sh Pan-UKBiobank_phenotype_manifest.tsv continuous /home/bwolford/scratch/panukbb >continuous.out 2>continuous.err &`
 
-You may want to run this command for multiple trait categories (e.g. phecode, biomakers). Note, this script checks to see if teh file already exists, but it doesn't check to see if it's complete.
+You may want to run this command for multiple trait categories (e.g. phecode, biomakers). Note, this script checks to see if teh file already exists, but it doesn't check to see if it's complete. You will also want to check that the number of downloaded files is what you expect from the manifest. You can use `ls -laF *bgz* | wc -l` to check the number of files in a directory. And you can check the output file (e.g. continuous.out) to see how many files began downloading. You may also want to eyeball and be sure there are no visible errors in the .out or .err files, in case an assumption about the manifest file is no longer true.
 
 * If you wanted to do this one by one and download into the current working directory, the command would look something like
 
