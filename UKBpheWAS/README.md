@@ -35,7 +35,28 @@ You may want to run this command for multiple trait categories (e.g. phecode, bi
 
 `wget https://pan-ukb-us-east-1.s3.amazonaws.com/sumstats_flat_files_tabix/phecode-008-both_sexes.tsv.bgz.tbi`
 
-### Step 2. Query
+### Step 2. Query a single variant 
 
-`sh query.sh` 
+We will take advantage of the tabix indexed summary statistics and use tabix to query the results for variants of interest from another GWAS. If you have one index variant and one PanUKBB results file, the command you want looks like this:
 
+`tabix <file> <coord>` for example
+`tabix ~/scratch/panukbb/biomarkers/biomarkers-30860-both_sexes-irnt.tsv.bgz 3:45785914-45785915`
+
+Notes:
+* make sure	the reference genome used for your summary statistics and lead variants	is the same.
+* If you are warned that `The index file is older than the data file` this is likely due to the order files were downloaded or the date created. If you are worried about it, you can create a new index file from bgzipped file with `tabix index`
+* Positions may be 0-based or 1-based and represent the start or end of a variant, which may itself be a single nucleotide polymorphism or a multilength insertion/deletion. You can read more about this [here](https://www.biostars.org/p/84686/) and [here](https://arnaudceol.wordpress.com/2014/09/18/chromosome-coordinate-systems-0-based-1-based/).
+
+But you likely have multiple summary statistics (phenome-wide could be thousands) and multiple variants of interest. So we will use `-R --region` command in `tabix` to look through everything. 
+
+First, we need to create a regions bed file (.bed) or tab-delimited file (.tab) with our index variant coordinates. You can read more [here](http://www.htslib.org/doc/tabix.html). The `query.sh` file will do this for a comma or tab separated file if you provide columns for chromosome, position, and position-to with coordinates that are 1-based and inclusive. 
+
+`bash query.sh <file_dir> <output> <region_file>
+
+This could also be parallelized with [BlueBox](https://github.com/huntdatacenter/BlueBox) to run many queries at once. 
+
+### Step 3. Visualize results by plotting in R
+
+We will use the phenotype manifest file to convert the UKB phenocode with the description and category and desired plotting color in R.
+
+`Rscript plot.R` 
