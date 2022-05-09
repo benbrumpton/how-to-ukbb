@@ -29,7 +29,7 @@ do
     echo $file
     echo $base
     base=`basename ${file} .tsv.bgz`
-    tabix $file -R $index >> $output
+    tabix $file -R $index | awk -v base=$base '{print $0"\t"base}'>> $output
 done
 
 
