@@ -12,13 +12,13 @@ Do not transfer individual-level data off the lab
 Summary-level data can be tranfered as per our ethics application and UKBB approval   
 
 ## How to   
-[Extract a phenotype or genotype file](https://github.com/benbrumpton/how-to-ukbb/blob/main/extract/extract.md)         
+[Extract a phenotype or genotype file](extract/extract.md)         
 Define a continous trait     
 Define a binary trait    
-[Define a ICD-based phenotype](https://github.com/benbrumpton/how-to-ukbb/blob/main/define/define.md)    
-[Run a GWAS](https://github.com/benbrumpton/launch-ukbb-gwas)    
+[Define a ICD-based phenotype](define/define.md)  
+[Run a GWAS](launch-ukbb-gwas/README.md)  
 Family-based GWAS     
-[PheWAS](https://github.com/benbrumpton/UKBpheWAS)     
+[PheWAS](UKBpheWAS/README.md)   
 Construct a PRS    
 PRS PheWAS     
 One-sample MR     
